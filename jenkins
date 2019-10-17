@@ -18,5 +18,13 @@ todo
 三、jenkins使用的基本配置
 1、3点重要配置：配置项目地址，maven的打包命令，构建完成后部署
 2、详述：
-对git工程进行打包
+1）jenkins打包机打war包： mvn clean package -U -Dmaven.test.skip=true，默认war包在工程的/target路径下
+2）将war包从/target路径下移动到部署机上，定义一个目录：scp
+3）停止部署机已有的tomcat服务
+4）将war包移动到App路径下，解压app路径下的war包,会有WEB-INF/classes目录结构，下面是代码内容(编译好的项目)
+5）启动容器的start.sh
+具体start.sh中写了什么：java
+
+【手动启动：把编译好的工程放到tomcat的webapp下即可】
+
 
